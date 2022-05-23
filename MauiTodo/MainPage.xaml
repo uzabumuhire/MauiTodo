@@ -21,7 +21,7 @@
         <DatePicker Grid.Row="2"
                     WidthRequest="300"
                     HorizontalOptions="Center"
-                             x:Name="DueDatePicker" />
+                    x:Name="DueDatePicker" />
 
         <Button Grid.Row="3"
                 Text="Add"
