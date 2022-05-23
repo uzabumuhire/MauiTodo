@@ -2,40 +2,39 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="MauiTodo.MainPage">
-			 
-    <ScrollView>
-        <VerticalStackLayout 
-            Spacing="25" 
-            Padding="30,0" 
-            VerticalOptions="Center">
 
-            <Image
-                Source="dotnet_bot.png"
-                SemanticProperties.Description="Cute dot net bot waving hi to you!"
-                HeightRequest="200"
-                HorizontalOptions="Center" />
-                
-            <Label 
-                Text="Hello, World!"
-                SemanticProperties.HeadingLevel="Level1"
-                FontSize="32"
-                HorizontalOptions="Center" />
-            
-            <Label 
-                Text="Welcome to .NET Multi-platform App UI"
-                SemanticProperties.HeadingLevel="Level2"
-                SemanticProperties.Description="Welcome to dot net Multi platform App U I"
-                FontSize="18"
-                HorizontalOptions="Center" />
+    <Grid RowDefinitions="1*, 1*, 1*, 1*, 8*"
+          MaximumWidthRequest="400"
+          Padding="20">
 
-            <Button 
-                x:Name="CounterBtn"
-                Text="Click me"
-                SemanticProperties.Hint="Counts the number of times you click"
-                Clicked="OnCounterClicked"
-                HorizontalOptions="Center" />
+        <Label Grid.Row="0"
+               Text="Maui Todo"
+               HorizontalTextAlignment="Center"
+               FontSize="Title"/>
 
-        </VerticalStackLayout>
-    </ScrollView>
- 
+        <Entry Grid.Row="1"
+               HorizontalOptions="Center"
+               Placeholder="Enter a title"
+               WidthRequest="300"
+               x:Name="TodoTitleEntry"/>
+
+        <DatePicker Grid.Row="2"
+                    WidthRequest="300"
+                    HorizontalOptions="Center"
+                             x:Name="DueDatepciker" />
+
+        <Button Grid.Row="3"
+                Text="Add"
+                WidthRequest="100"
+                HeightRequest="50"
+                HorizontalOptions="Center"
+                Clicked="Button_Clicked"/>
+
+        <ScrollView Grid.Row="4">
+            <Label HorizontalTextAlignment="Center"
+                   x:Name="TodosLabel" />
+        </ScrollView>
+
+    </Grid>
+
 </ContentPage>
